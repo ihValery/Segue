@@ -13,4 +13,10 @@ class ThirdVC: UIViewController {
         super.viewDidLoad()
 
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? ThirdTwoVC else { return }
+        destination.closure = { [weak self] text in
+            self?.
+        }
+    }
 }

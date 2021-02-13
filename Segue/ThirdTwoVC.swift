@@ -9,9 +9,11 @@ import UIKit
 
 class ThirdTwoVC: UIViewController {
 
+    var closure: ((String) -> ())?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        closure?("Я могу передать данные через замыкание")
     }
-
 }
