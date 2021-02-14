@@ -9,11 +9,30 @@ import UIKit
 
 class ThirdTwoVC: UIViewController {
 
-    var closure: ((String) -> ())?
+    var myClosure: ((String) -> (String))?
+    var mySecondClosure: ((String) -> (Int))?
+    var text: String!
+    
+    @IBOutlet weak var textFieldForClosure: UITextField!
+    @IBOutlet weak var textLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        closure?("Я могу передать данные через замыкание")
+        textLabel.text = text
+    }
+    
+    @IBAction func textForClosure(_ sender: UITextField) {
+        if let myClosure = myClosure {
+            let reversText = myClosure(textFieldForClosure.text!)
+            textLabel.text = String(reversText)
+        }
+    }
+    
+    @IBAction func textForSecondClouse(_ sender: UITextField) {
+        if let mySecondClosure = mySecondClosure {
+            let count = mySecondClosure(textFieldForClosure.text!)
+            textLabel.text = String(count)
+        }
     }
 }
