@@ -50,8 +50,7 @@ class FirstVC: UIViewController {
             }
             """
         }
-        
-        
+    
         //Не забываем вызвать метод show ))) который как раз и откроет нам данный контролер
         show(firstTwoVC, sender: nil)
     }

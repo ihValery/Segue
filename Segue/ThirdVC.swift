@@ -12,14 +12,16 @@ class ThirdVC: UIViewController {
     @IBOutlet weak var textFieldOne: UITextField!
     
     @IBAction func buttonAction(_ sender: UIButton) {
-        //Проверили не нил
+        //пытаемся достать thirdTwoVC сториборд по идентификатору и сразу кастим но нужного класса
         guard let thirdTwoVC = storyboard?.instantiateViewController(identifier: "ThirdTwoSB") as? ThirdTwoVC else { return }
+        //просто прокинули то что написали + название
         thirdTwoVC.text = textFieldOne.text! + "- firstClosure"
+        //thirdTwoVC мы будем "слушать" твой myClosure и ждать его ответа )))
         thirdTwoVC.myClosure = { [weak self] myText in
             self?.textFieldOne.text = myText
-            let reversStr = String(myText.reversed())
-            return reversStr
+            return String(myText.reversed())
         }
+        //Идем в thirdTwoVC контролер ))
         navigationController?.pushViewController(thirdTwoVC, animated: true)
     }
     

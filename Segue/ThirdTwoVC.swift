@@ -9,6 +9,8 @@ import UIKit
 
 class ThirdTwoVC: UIViewController {
 
+    //Привязываем безымянное замыкание к переменной ))). Делаем его инициализацию отложенной, возможно мы и не будем вызывать (?)
+    //
     var myClosure: ((String) -> (String))?
     var mySecondClosure: ((String) -> (Int))?
     var text: String!
@@ -23,7 +25,10 @@ class ThirdTwoVC: UIViewController {
     }
     
     @IBAction func textForClosure(_ sender: UITextField) {
+        //Если мы можем достать замыкание
         if let myClosure = myClosure {
+            //Вызываем замыкание и его результат присваевам переменнной (для дальнейшего редактирования)
+            //Не надо дергать замыкание если оно пустое
             let reversText = myClosure(textFieldForClosure.text!)
             textLabel.text = String(reversText)
         }

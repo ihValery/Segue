@@ -8,7 +8,7 @@
 import UIKit
 
 class ThirdThreeVC: UIViewController {
-
+    
     var myThirdClosure: ((String) -> (String))?
     var text: String!
     
@@ -18,12 +18,15 @@ class ThirdThreeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         textLabel.text = text
+        
     }
     @IBAction func textFieldThirdClosure() {
         if let myThirdClosure = myThirdClosure {
-            let upperCased = myThirdClosure(textFieldForClosure.text!)
-            textLabel.text = String(upperCased)
-            
+            textLabel.text = String( myThirdClosure(textFieldForClosure.text!) )
         }
+    }
+    //Простой экшн для возврта назад!
+    @IBAction func backAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
 }

@@ -338,7 +338,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E9r-FI-KW7">
                                 <rect key="frame" x="10" y="270" width="370" height="515"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <mutableString key="text">class FirstVC: UIViewController {
+                                <string key="text">class FirstVC: UIViewController {
     
     @IBOutlet weak var latelText: UILabel!
 
@@ -363,7 +363,7 @@ class SecondVC: UIViewController {
             self.text = "Ты ничего не привез ((("
         }
     }
-}</mutableString>
+}</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -422,19 +422,18 @@ class SecondVC: UIViewController {
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ulh-wQ-8Pt">
                                 <rect key="frame" x="10" y="147" width="370" height="550"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <mutableString key="text">class ThirdVC: UIViewController {
-    
-    @IBOutlet weak var textFieldOne: UITextField!
-    
-    @IBAction func buttonAction(_ sender: UIButton) {
-        //Проверили не нил
+                                <mutableString key="text">@IBAction func buttonAction(_ sender: UIButton) {
+        //пытаемся достать thirdTwoVC сториборд по идентификатору и сразу кастим но нужного класса
         guard let thirdTwoVC = storyboard?.instantiateViewController(identifier: "ThirdTwoSB") as? ThirdTwoVC else { return }
+        //просто прокинули то что написали + название
         thirdTwoVC.text = textFieldOne.text! + "- firstClosure"
+        //thirdTwoVC мы будем "слушать" твой myClosure и ждать его ответа )))
         thirdTwoVC.myClosure = { [weak self] myText in
             self?.textFieldOne.text = myText
             let reversStr = String(myText.reversed())
             return reversStr
         }
+        //Идем в thirdTwoVC контролер ))
         navigationController?.pushViewController(thirdTwoVC, animated: true)
     }
     
@@ -622,15 +621,32 @@ var myClosure: ((String) -&gt; (String))?
                                     <action selector="textFieldThirdClosure" destination="F1Z-d3-96I" eventType="editingChanged" id="q7e-vN-HBF"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80Q-g3-NE8">
+                                <rect key="frame" x="25" y="147" width="340" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="j6x-Fr-ykF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Назад">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="backAction:" destination="F1Z-d3-96I" eventType="touchUpInside" id="Z98-7a-3JB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hVa-DQ-bgD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="tKt-2v-XgF" firstAttribute="leading" secondItem="hVa-DQ-bgD" secondAttribute="leading" constant="25" id="53x-if-Pma"/>
                             <constraint firstItem="hVa-DQ-bgD" firstAttribute="trailing" secondItem="tKt-2v-XgF" secondAttribute="trailing" constant="25" id="9hx-Ki-Rs4"/>
+                            <constraint firstItem="80Q-g3-NE8" firstAttribute="top" secondItem="tKt-2v-XgF" secondAttribute="bottom" constant="25" id="DSG-PF-0qy"/>
                             <constraint firstItem="hVa-DQ-bgD" firstAttribute="trailing" secondItem="HaL-uw-T68" secondAttribute="trailing" constant="25" id="dHm-Nr-Yb5"/>
+                            <constraint firstItem="80Q-g3-NE8" firstAttribute="leading" secondItem="hVa-DQ-bgD" secondAttribute="leading" constant="25" id="nON-2h-Fcr"/>
                             <constraint firstItem="HaL-uw-T68" firstAttribute="leading" secondItem="hVa-DQ-bgD" secondAttribute="leading" constant="25" id="rjM-r5-J3V"/>
                             <constraint firstItem="tKt-2v-XgF" firstAttribute="top" secondItem="HaL-uw-T68" secondAttribute="bottom" constant="8" symbolic="YES" id="snF-Bu-wRz"/>
+                            <constraint firstItem="hVa-DQ-bgD" firstAttribute="trailing" secondItem="80Q-g3-NE8" secondAttribute="trailing" constant="25" id="tsf-SE-rzB"/>
                             <constraint firstItem="HaL-uw-T68" firstAttribute="top" secondItem="hVa-DQ-bgD" secondAttribute="top" constant="50" id="uQb-67-g4Q"/>
                         </constraints>
                     </view>
@@ -656,7 +672,7 @@ var myClosure: ((String) -&gt; (String))?
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
