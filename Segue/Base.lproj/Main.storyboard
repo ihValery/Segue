@@ -806,7 +806,7 @@ var myClosure: ((String) -&gt; (String))?
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="goForwardAction:" destination="ae7-l6-Mq8" eventType="touchUpInside" id="Ocr-OV-HxE"/>
+                                    <action selector="goForwardAction:" destination="ae7-l6-Mq8" eventType="touchUpInside" id="ODm-Dz-eZR"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6m-gl-uiE">
@@ -855,13 +855,13 @@ var myClosure: ((String) -&gt; (String))?
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cg2-tK-skW">
-                                <rect key="frame" x="25" y="194" width="340" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="с пустыми руками?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cg2-tK-skW">
+                                <rect key="frame" x="25" y="44" width="340" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="что хотим вернуть?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mj7-qc-4ec">
-                                <rect key="frame" x="25" y="226" width="340" height="40"/>
+                                <rect key="frame" x="25" y="76" width="340" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Dw7-xl-fTt"/>
                                 </constraints>
@@ -869,7 +869,7 @@ var myClosure: ((String) -&gt; (String))?
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4i4-N2-a0M">
-                                <rect key="frame" x="25" y="291" width="340" height="40"/>
+                                <rect key="frame" x="25" y="141" width="340" height="40"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="t3k-g4-Bbk"/>
@@ -879,24 +879,95 @@ var myClosure: ((String) -&gt; (String))?
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="goBackAction:" destination="XNk-Dl-AZU" eventType="touchUpInside" id="4Nc-9V-Gdh"/>
+                                    <action selector="goBackAction:" destination="XNk-Dl-AZU" eventType="touchUpInside" id="Wqx-U3-Gb6"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8wW-My-lg5">
+                                <rect key="frame" x="10" y="206" width="370" height="579"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <mutableString key="text">protocol FifthVCDelegate: AnyObject {
+    func updateLabel(text: String)
+}
+
+class FifthVC: UIViewController, FifthVCDelegate {
+    var textOne = ""
+    
+    @IBOutlet weak var textFieldOne: UITextField!
+    @IBOutlet weak var textLabelOne: UILabel!
+
+    @IBAction func goForwardAction(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let fifthTwoVC = storyboard.instantiateViewController(identifier: "FifthTwoSB") as? FifthTwoVC else { return }
+        fifthTwoVC.textForLabel = takingValueFieldOne()
+        fifthTwoVC.delegate = self
+        
+        show(fifthTwoVC, sender: nil)
+    }
+    
+    //Выполняем наш метод от подписанного протокола
+    func updateLabel(text: String) {
+        textLabelOne.text = text
+    }
+    
+    func takingValueFieldOne() -&gt; String {
+        if let text = textFieldOne.text, text != "" { textOne = text }
+        else { textOne = "с пустыми руками? тогда чай без сахара )))" }
+        return textOne
+    }
+}
+
+class FifthTwoVC: UIViewController {
+
+    var text = ""
+    var textForLabel = ""
+    
+    //создаем ту самую слабую ссылку на протокол weak var delegate: FirstViewControllerDelegate
+    weak var delegate: FifthVCDelegate?
+    
+    @IBOutlet weak var textFieldTwo: UITextField!
+    @IBOutlet weak var textLabelTwo: UILabel!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        textLabelTwo.text = textForLabel
+    }
+    
+    @IBAction func goBackAction(_ sender: UIButton) {
+        takingValueField()
+        delegate?.updateLabel(text: text)
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func takingValueField() {
+        if let text = textFieldTwo.text, text != "" { self.text = text }
+        else { text = "ты оставил пустое поле" }
+    }
+}</mutableString>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EQI-hK-D3l"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="8wW-My-lg5" firstAttribute="top" secondItem="4i4-N2-a0M" secondAttribute="bottom" constant="25" id="1Bi-uQ-YmK"/>
+                            <constraint firstItem="8wW-My-lg5" firstAttribute="leading" secondItem="EQI-hK-D3l" secondAttribute="leading" constant="10" id="7yJ-Ah-FhZ"/>
                             <constraint firstItem="EQI-hK-D3l" firstAttribute="trailing" secondItem="Mj7-qc-4ec" secondAttribute="trailing" constant="25" id="BLx-C4-3a3"/>
                             <constraint firstItem="Mj7-qc-4ec" firstAttribute="top" secondItem="Cg2-tK-skW" secondAttribute="bottom" constant="8" symbolic="YES" id="BOO-af-jBr"/>
                             <constraint firstItem="EQI-hK-D3l" firstAttribute="trailing" secondItem="4i4-N2-a0M" secondAttribute="trailing" constant="25" id="CVi-Ey-ISe"/>
                             <constraint firstItem="EQI-hK-D3l" firstAttribute="trailing" secondItem="Cg2-tK-skW" secondAttribute="trailing" constant="25" id="Ch7-C0-t1e"/>
                             <constraint firstItem="Cg2-tK-skW" firstAttribute="leading" secondItem="EQI-hK-D3l" secondAttribute="leading" constant="25" id="EQ8-Uc-643"/>
                             <constraint firstItem="Mj7-qc-4ec" firstAttribute="leading" secondItem="EQI-hK-D3l" secondAttribute="leading" constant="25" id="L52-br-EOr"/>
-                            <constraint firstItem="Cg2-tK-skW" firstAttribute="top" secondItem="EQI-hK-D3l" secondAttribute="top" constant="150" id="Nor-Hf-lPu"/>
+                            <constraint firstItem="Cg2-tK-skW" firstAttribute="top" secondItem="EQI-hK-D3l" secondAttribute="top" id="Nor-Hf-lPu"/>
                             <constraint firstItem="4i4-N2-a0M" firstAttribute="top" secondItem="Mj7-qc-4ec" secondAttribute="bottom" constant="25" id="XFE-l3-VRq"/>
+                            <constraint firstItem="EQI-hK-D3l" firstAttribute="bottom" secondItem="8wW-My-lg5" secondAttribute="bottom" constant="25" id="f74-eV-QDX"/>
                             <constraint firstItem="4i4-N2-a0M" firstAttribute="leading" secondItem="EQI-hK-D3l" secondAttribute="leading" constant="25" id="klw-os-qI8"/>
+                            <constraint firstItem="EQI-hK-D3l" firstAttribute="trailing" secondItem="8wW-My-lg5" secondAttribute="trailing" constant="10" id="uqR-As-po5"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Rqh-Qi-qNu"/>
                     <connections>
                         <outlet property="textFieldTwo" destination="Mj7-qc-4ec" id="cOB-Wi-L2x"/>
                         <outlet property="textLabelTwo" destination="Cg2-tK-skW" id="682-gw-cC0"/>
