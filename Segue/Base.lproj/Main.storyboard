@@ -41,7 +41,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jl9-XG-KFc">
                                                 <rect key="frame" x="25" y="0.0" width="340" height="143.33333333333334"/>
-                                                <string key="text">Передача данных вперед:
+                                                <string key="text">	Передача данных вперед:
 происходит каждый раз, когда на экране появляется новый ViewController.
 Главный метод, с которым Вы будете работать - это prepare(for segue:).</string>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
@@ -86,8 +86,9 @@
                                                     <segue destination="w9v-MK-1ay" kind="show" identifier="toFirstTwoSB" id="0Cs-MH-Wdf"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Можно подключить ViewController программно, а не использовать segue." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWk-cg-vFE">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWk-cg-vFE">
                                                 <rect key="frame" x="25" y="333.33333333333337" width="340" height="71.666666666666686"/>
+                                                <string key="text">	Можно подключить ViewController программно, а не использовать segue.</string>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                                 <color key="textColor" systemColor="systemGrayColor"/>
                                                 <nil key="highlightedColor"/>
@@ -265,14 +266,15 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcN-WE-dwo">
                                 <rect key="frame" x="25" y="327" width="340" height="167.33333333333337"/>
-                                <string key="text">Суть в том что код здесь, а там мы лишь записываем данные в "свою переменную" и дома уже из нее берем что нам надо.
+                                <string key="text">	Суть в том что код здесь, а там мы лишь записываем данные в "свою переменную" и дома уже из нее берем что нам надо.
 Словно рука через портал вернулась и забрала с тумбочки в отеле телефон оставленный ))).</string>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Передача данных в обратном направлении через unwind segue." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btr-g1-noN">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btr-g1-noN">
                                 <rect key="frame" x="25" y="140" width="340" height="48"/>
+                                <string key="text">	Передача данных в обратном направлении через unwind segue.</string>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
@@ -422,7 +424,7 @@ class SecondVC: UIViewController {
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ulh-wQ-8Pt">
                                 <rect key="frame" x="10" y="147" width="370" height="550"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <mutableString key="text">@IBAction func buttonAction(_ sender: UIButton) {
+                                <string key="text">@IBAction func buttonAction(_ sender: UIButton) {
         //пытаемся достать thirdTwoVC сториборд по идентификатору и сразу кастим но нужного класса
         guard let thirdTwoVC = storyboard?.instantiateViewController(identifier: "ThirdTwoSB") as? ThirdTwoVC else { return }
         //просто прокинули то что написали + название
@@ -445,7 +447,7 @@ var myClosure: ((String) -&gt; (String))?
             let reversText = myClosure(textFieldForClosure.text!)
             textLabel.text = String(reversText)
         }
-    }</mutableString>
+    }</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -486,7 +488,7 @@ var myClosure: ((String) -&gt; (String))?
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8Y-hN-xUp">
                                 <rect key="frame" x="25" y="140" width="340" height="71.666666666666686"/>
-                                <string key="text">Продвинутая техника:
+                                <string key="text">	Продвинутая техника:
 Замена делегирования на замыкания (closures) Swift.</string>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
@@ -566,7 +568,7 @@ var myClosure: ((String) -&gt; (String))?
                             <constraint firstItem="C8Y-hN-xUp" firstAttribute="leading" secondItem="rxo-AO-iN8" secondAttribute="leading" constant="25" id="v9f-35-vUs"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Third" image="square.righthalf.fill" catalog="system" id="52s-VO-hlK"/>
+                    <tabBarItem key="tabBarItem" title="Third" image="square.bottomhalf.fill" catalog="system" id="52s-VO-hlK"/>
                     <navigationItem key="navigationItem" id="t9M-DO-4Ez"/>
                     <connections>
                         <outlet property="textFieldOne" destination="d9q-Kt-bXO" id="Ndd-UR-u17"/>
@@ -575,6 +577,116 @@ var myClosure: ((String) -&gt; (String))?
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QO2-Pq-Hmc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2374" y="228"/>
+        </scene>
+        <!--Fourth-->
+        <scene sceneID="IN1-gu-GL7">
+            <objects>
+                <viewController storyboardIdentifier="FourthSB" id="y1G-oS-Zu0" customClass="FourthVC" customModule="Segue" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D6z-iZ-oov">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Bc-Ll-VLB">
+                                <rect key="frame" x="25" y="332.33333333333331" width="340" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nse-0l-xKP">
+                                <rect key="frame" x="25" y="381.33333333333331" width="340" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="WU2-NK-MFa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="через Segues">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Eac-79-aqA" kind="show" identifier="goFourthTwo" id="Z4y-p9-JUT"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BiV-Na-a5V">
+                                <rect key="frame" x="25" y="140" width="340" height="167.33333333333337"/>
+                                <string key="text">	Передача данных в обратном направлении при помощи делегата. Возможно, вы захотите, чтобы передача происходила в любой момент, а не только при переходе. Правильным решением будет делегирование.</string>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Mak-lc-9GG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5Bc-Ll-VLB" firstAttribute="top" secondItem="BiV-Na-a5V" secondAttribute="bottom" constant="25" id="CwD-XT-y5h"/>
+                            <constraint firstItem="Mak-lc-9GG" firstAttribute="trailing" secondItem="Nse-0l-xKP" secondAttribute="trailing" constant="25" id="Dkm-4X-OfU"/>
+                            <constraint firstItem="Nse-0l-xKP" firstAttribute="leading" secondItem="Mak-lc-9GG" secondAttribute="leading" constant="25" id="EZ2-5N-NIf"/>
+                            <constraint firstItem="BiV-Na-a5V" firstAttribute="top" secondItem="Mak-lc-9GG" secondAttribute="top" id="ITZ-eo-1KN"/>
+                            <constraint firstItem="Mak-lc-9GG" firstAttribute="trailing" secondItem="BiV-Na-a5V" secondAttribute="trailing" constant="25" id="TYi-S5-I2G"/>
+                            <constraint firstItem="Mak-lc-9GG" firstAttribute="trailing" secondItem="5Bc-Ll-VLB" secondAttribute="trailing" constant="25" id="Yp1-5s-hvx"/>
+                            <constraint firstItem="BiV-Na-a5V" firstAttribute="leading" secondItem="Mak-lc-9GG" secondAttribute="leading" constant="25" id="ccK-Cj-eNa"/>
+                            <constraint firstItem="Nse-0l-xKP" firstAttribute="top" secondItem="5Bc-Ll-VLB" secondAttribute="bottom" constant="25" id="xjb-OO-uKr"/>
+                            <constraint firstItem="5Bc-Ll-VLB" firstAttribute="leading" secondItem="Mak-lc-9GG" secondAttribute="leading" constant="25" id="yBA-Qb-hnJ"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Fourth" image="square.bottomhalf.fill" catalog="system" id="Esn-X1-dEj"/>
+                    <navigationItem key="navigationItem" id="Ndl-p9-JNQ"/>
+                    <connections>
+                        <outlet property="textLabel" destination="5Bc-Ll-VLB" id="qmZ-LB-Cpu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="do5-lx-heG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4840" y="-1145"/>
+        </scene>
+        <!--Fourth TwoVC-->
+        <scene sceneID="ggg-wV-0l1">
+            <objects>
+                <viewController storyboardIdentifier="FourthTwoSB" id="Eac-79-aqA" customClass="FourthTwoVC" customModule="Segue" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YJn-KH-PQV">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="что хотим вернуть?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0m4-n8-9tT">
+                                <rect key="frame" x="25" y="140" width="340" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="UDa-1y-OAL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHY-9B-RQF">
+                                <rect key="frame" x="25" y="205" width="340" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="gbL-R5-Qh3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Назад">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="backAction:" destination="Eac-79-aqA" eventType="touchUpInside" id="toD-ng-Hj4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dn3-Da-Lwn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0m4-n8-9tT" firstAttribute="top" secondItem="dn3-Da-Lwn" secondAttribute="top" id="46n-qO-7Xk"/>
+                            <constraint firstItem="rHY-9B-RQF" firstAttribute="leading" secondItem="dn3-Da-Lwn" secondAttribute="leading" constant="25" id="JTf-sb-SVx"/>
+                            <constraint firstItem="dn3-Da-Lwn" firstAttribute="trailing" secondItem="0m4-n8-9tT" secondAttribute="trailing" constant="25" id="PQw-PV-4ff"/>
+                            <constraint firstItem="rHY-9B-RQF" firstAttribute="top" secondItem="0m4-n8-9tT" secondAttribute="bottom" constant="25" id="Xhz-jk-ruC"/>
+                            <constraint firstItem="dn3-Da-Lwn" firstAttribute="trailing" secondItem="rHY-9B-RQF" secondAttribute="trailing" constant="25" id="bcz-oR-ZER"/>
+                            <constraint firstItem="0m4-n8-9tT" firstAttribute="leading" secondItem="dn3-Da-Lwn" secondAttribute="leading" constant="25" id="wbf-QA-IIW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9eN-m8-uBX"/>
+                    <connections>
+                        <outlet property="textField" destination="0m4-n8-9tT" id="ZrZ-AN-Utv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pv8-0Y-wNo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5652" y="-1145"/>
         </scene>
         <!--Data transfer-->
         <scene sceneID="9Ai-9u-bIo">
@@ -591,6 +703,8 @@ var myClosure: ((String) -&gt; (String))?
                         <segue destination="ers-Ws-eAW" kind="relationship" relationship="viewControllers" id="los-O1-z0X"/>
                         <segue destination="LqB-ct-66t" kind="relationship" relationship="viewControllers" id="aSq-Ir-pLU"/>
                         <segue destination="HdW-Yz-ImT" kind="relationship" relationship="viewControllers" id="1Zj-IU-acb"/>
+                        <segue destination="y1G-oS-Zu0" kind="relationship" relationship="viewControllers" id="Oy8-oW-MqI"/>
+                        <segue destination="ae7-l6-Mq8" kind="relationship" relationship="viewControllers" id="INT-tA-z6Z"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SQY-Ve-Q27" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -660,6 +774,209 @@ var myClosure: ((String) -&gt; (String))?
             </objects>
             <point key="canvasLocation" x="4032" y="227"/>
         </scene>
+        <!--Fifth-->
+        <scene sceneID="cQP-xm-iLS">
+            <objects>
+                <viewController storyboardIdentifier="FifthSB" id="ae7-l6-Mq8" customClass="FifthVC" customModule="Segue" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pOJ-gY-uT6">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kug-YS-OtT">
+                                <rect key="frame" x="25" y="236.66666666666666" width="340" height="23.999999999999972"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="возьмем что-нибудь с собой?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m1Y-uw-jq9">
+                                <rect key="frame" x="25" y="268.66666666666669" width="340" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="mbN-mb-pf5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAf-Xr-lhT">
+                                <rect key="frame" x="25" y="333.66666666666669" width="340" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="wV3-JC-q8Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Вперед">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="goForwardAction:" destination="ae7-l6-Mq8" eventType="touchUpInside" id="ODm-Dz-eZR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6m-gl-uiE">
+                                <rect key="frame" x="25" y="140" width="340" height="71.666666666666686"/>
+                                <string key="text">	Передача данных в оба направления между ViewController без segues c помощью делегатов.</string>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="O0Z-4J-TAL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="m1Y-uw-jq9" firstAttribute="leading" secondItem="O0Z-4J-TAL" secondAttribute="leading" constant="25" id="1MD-1U-J3D"/>
+                            <constraint firstItem="KAf-Xr-lhT" firstAttribute="top" secondItem="m1Y-uw-jq9" secondAttribute="bottom" constant="25" id="1S4-sY-QK2"/>
+                            <constraint firstItem="O0Z-4J-TAL" firstAttribute="trailing" secondItem="u6m-gl-uiE" secondAttribute="trailing" constant="25" id="2ME-71-CqP"/>
+                            <constraint firstItem="O0Z-4J-TAL" firstAttribute="trailing" secondItem="Kug-YS-OtT" secondAttribute="trailing" constant="25" id="2Ta-MU-285"/>
+                            <constraint firstItem="Kug-YS-OtT" firstAttribute="top" secondItem="u6m-gl-uiE" secondAttribute="bottom" constant="25" id="BuV-7X-eDJ"/>
+                            <constraint firstItem="u6m-gl-uiE" firstAttribute="top" secondItem="O0Z-4J-TAL" secondAttribute="top" id="IXA-ef-dS7"/>
+                            <constraint firstItem="u6m-gl-uiE" firstAttribute="top" secondItem="O0Z-4J-TAL" secondAttribute="top" id="LGV-ya-rpe"/>
+                            <constraint firstItem="KAf-Xr-lhT" firstAttribute="leading" secondItem="O0Z-4J-TAL" secondAttribute="leading" constant="25" id="PJE-qJ-e6s"/>
+                            <constraint firstItem="u6m-gl-uiE" firstAttribute="leading" secondItem="O0Z-4J-TAL" secondAttribute="leading" constant="25" id="PbL-sJ-7rD"/>
+                            <constraint firstItem="Kug-YS-OtT" firstAttribute="leading" secondItem="O0Z-4J-TAL" secondAttribute="leading" constant="25" id="TFK-ON-ac6"/>
+                            <constraint firstItem="m1Y-uw-jq9" firstAttribute="top" secondItem="Kug-YS-OtT" secondAttribute="bottom" constant="8" symbolic="YES" id="WAX-AM-0on"/>
+                            <constraint firstItem="O0Z-4J-TAL" firstAttribute="trailing" secondItem="u6m-gl-uiE" secondAttribute="trailing" constant="25" id="ZoO-Hj-uio"/>
+                            <constraint firstItem="O0Z-4J-TAL" firstAttribute="trailing" secondItem="KAf-Xr-lhT" secondAttribute="trailing" constant="25" id="it9-9Y-bgL"/>
+                            <constraint firstItem="O0Z-4J-TAL" firstAttribute="trailing" secondItem="m1Y-uw-jq9" secondAttribute="trailing" constant="25" id="nu7-Nh-Jxs"/>
+                            <constraint firstItem="u6m-gl-uiE" firstAttribute="leading" secondItem="O0Z-4J-TAL" secondAttribute="leading" constant="25" id="u6F-Ne-7vw"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Fifth" image="square.righthalf.fill" catalog="system" id="XlD-2e-0re"/>
+                    <connections>
+                        <outlet property="textFieldOne" destination="m1Y-uw-jq9" id="JsS-Eo-1CO"/>
+                        <outlet property="textLabelOne" destination="Kug-YS-OtT" id="EXm-O5-z8J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m4X-e1-Ot3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4840" y="-467"/>
+        </scene>
+        <!--Fifth TwoVC-->
+        <scene sceneID="mn6-uN-dFE">
+            <objects>
+                <viewController storyboardIdentifier="FifthTwoSB" id="XNk-Dl-AZU" customClass="FifthTwoVC" customModule="Segue" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="th2-OP-UY4">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="с пустыми руками?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cg2-tK-skW">
+                                <rect key="frame" x="25" y="44" width="340" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="что хотим вернуть?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mj7-qc-4ec">
+                                <rect key="frame" x="25" y="76" width="340" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Dw7-xl-fTt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4i4-N2-a0M">
+                                <rect key="frame" x="25" y="141" width="340" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="t3k-g4-Bbk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Назад">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBackAction:" destination="XNk-Dl-AZU" eventType="touchUpInside" id="Wqx-U3-Gb6"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8wW-My-lg5">
+                                <rect key="frame" x="10" y="206" width="370" height="579"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <mutableString key="text">protocol FifthVCDelegate: AnyObject {
+    func updateLabel(text: String)
+}
+
+class FifthVC: UIViewController, FifthVCDelegate {
+    var textOne = ""
+    
+    @IBOutlet weak var textFieldOne: UITextField!
+    @IBOutlet weak var textLabelOne: UILabel!
+
+    @IBAction func goForwardAction(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let fifthTwoVC = storyboard.instantiateViewController(identifier: "FifthTwoSB") as? FifthTwoVC else { return }
+        fifthTwoVC.textForLabel = takingValueFieldOne()
+        fifthTwoVC.delegate = self
+        
+        show(fifthTwoVC, sender: nil)
+    }
+    
+    //Выполняем наш метод от подписанного протокола
+    func updateLabel(text: String) {
+        textLabelOne.text = text
+    }
+    
+    func takingValueFieldOne() -&gt; String {
+        if let text = textFieldOne.text, text != "" { textOne = text }
+        else { textOne = "с пустыми руками? тогда чай без сахара )))" }
+        return textOne
+    }
+}
+
+class FifthTwoVC: UIViewController {
+
+    var text = ""
+    var textForLabel = ""
+    
+    //создаем ту самую слабую ссылку на протокол weak var delegate: FirstViewControllerDelegate
+    weak var delegate: FifthVCDelegate?
+    
+    @IBOutlet weak var textFieldTwo: UITextField!
+    @IBOutlet weak var textLabelTwo: UILabel!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        textLabelTwo.text = textForLabel
+    }
+    
+    @IBAction func goBackAction(_ sender: UIButton) {
+        takingValueField()
+        delegate?.updateLabel(text: text)
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func takingValueField() {
+        if let text = textFieldTwo.text, text != "" { self.text = text }
+        else { text = "ты оставил пустое поле" }
+    }
+}</mutableString>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="EQI-hK-D3l"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8wW-My-lg5" firstAttribute="top" secondItem="4i4-N2-a0M" secondAttribute="bottom" constant="25" id="1Bi-uQ-YmK"/>
+                            <constraint firstItem="8wW-My-lg5" firstAttribute="leading" secondItem="EQI-hK-D3l" secondAttribute="leading" constant="10" id="7yJ-Ah-FhZ"/>
+                            <constraint firstItem="EQI-hK-D3l" firstAttribute="trailing" secondItem="Mj7-qc-4ec" secondAttribute="trailing" constant="25" id="BLx-C4-3a3"/>
+                            <constraint firstItem="Mj7-qc-4ec" firstAttribute="top" secondItem="Cg2-tK-skW" secondAttribute="bottom" constant="8" symbolic="YES" id="BOO-af-jBr"/>
+                            <constraint firstItem="EQI-hK-D3l" firstAttribute="trailing" secondItem="4i4-N2-a0M" secondAttribute="trailing" constant="25" id="CVi-Ey-ISe"/>
+                            <constraint firstItem="EQI-hK-D3l" firstAttribute="trailing" secondItem="Cg2-tK-skW" secondAttribute="trailing" constant="25" id="Ch7-C0-t1e"/>
+                            <constraint firstItem="Cg2-tK-skW" firstAttribute="leading" secondItem="EQI-hK-D3l" secondAttribute="leading" constant="25" id="EQ8-Uc-643"/>
+                            <constraint firstItem="Mj7-qc-4ec" firstAttribute="leading" secondItem="EQI-hK-D3l" secondAttribute="leading" constant="25" id="L52-br-EOr"/>
+                            <constraint firstItem="Cg2-tK-skW" firstAttribute="top" secondItem="EQI-hK-D3l" secondAttribute="top" id="Nor-Hf-lPu"/>
+                            <constraint firstItem="4i4-N2-a0M" firstAttribute="top" secondItem="Mj7-qc-4ec" secondAttribute="bottom" constant="25" id="XFE-l3-VRq"/>
+                            <constraint firstItem="EQI-hK-D3l" firstAttribute="bottom" secondItem="8wW-My-lg5" secondAttribute="bottom" constant="25" id="f74-eV-QDX"/>
+                            <constraint firstItem="4i4-N2-a0M" firstAttribute="leading" secondItem="EQI-hK-D3l" secondAttribute="leading" constant="25" id="klw-os-qI8"/>
+                            <constraint firstItem="EQI-hK-D3l" firstAttribute="trailing" secondItem="8wW-My-lg5" secondAttribute="trailing" constant="10" id="uqR-As-po5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Rqh-Qi-qNu"/>
+                    <connections>
+                        <outlet property="textFieldTwo" destination="Mj7-qc-4ec" id="cOB-Wi-L2x"/>
+                        <outlet property="textLabelTwo" destination="Cg2-tK-skW" id="682-gw-cC0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nei-uQ-9w2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5651" y="-467"/>
+        </scene>
     </scenes>
     <resources>
         <image name="square.bottomhalf.fill" catalog="system" width="128" height="114"/>
@@ -672,7 +989,7 @@ var myClosure: ((String) -&gt; (String))?
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

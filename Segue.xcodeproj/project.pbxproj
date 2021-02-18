@@ -12,6 +12,10 @@
 		8013FDBC25D8875F000539EA /* ThirdTwoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8013FDBB25D8875F000539EA /* ThirdTwoVC.swift */; };
 		8013FDBF25D954DF000539EA /* ThirdThreeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8013FDBE25D954DF000539EA /* ThirdThreeVC.swift */; };
 		8036BBD725D8047A00A87C03 /* FirstTwoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8036BBD625D8047900A87C03 /* FirstTwoVC.swift */; };
+		806B6A1325DC3D7400FCE2AC /* FourthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806B6A1225DC3D7400FCE2AC /* FourthVC.swift */; };
+		806B6A1625DC3D9000FCE2AC /* FourthTwoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806B6A1525DC3D9000FCE2AC /* FourthTwoVC.swift */; };
+		806B6A1925DC6BEA00FCE2AC /* FifthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806B6A1825DC6BEA00FCE2AC /* FifthVC.swift */; };
+		806B6A1C25DC6C2000FCE2AC /* FifthTwoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806B6A1B25DC6C2000FCE2AC /* FifthTwoVC.swift */; };
 		80BA1B2225D41B35002EDEE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BA1B2125D41B35002EDEE8 /* AppDelegate.swift */; };
 		80BA1B2425D41B35002EDEE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BA1B2325D41B35002EDEE8 /* SceneDelegate.swift */; };
 		80BA1B2925D41B35002EDEE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80BA1B2725D41B35002EDEE8 /* Main.storyboard */; };
@@ -27,6 +31,10 @@
 		8013FDBB25D8875F000539EA /* ThirdTwoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTwoVC.swift; sourceTree = "<group>"; };
 		8013FDBE25D954DF000539EA /* ThirdThreeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdThreeVC.swift; sourceTree = "<group>"; };
 		8036BBD625D8047900A87C03 /* FirstTwoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTwoVC.swift; sourceTree = "<group>"; };
+		806B6A1225DC3D7400FCE2AC /* FourthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthVC.swift; sourceTree = "<group>"; };
+		806B6A1525DC3D9000FCE2AC /* FourthTwoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthTwoVC.swift; sourceTree = "<group>"; };
+		806B6A1825DC6BEA00FCE2AC /* FifthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthVC.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		806B6A1B25DC6C2000FCE2AC /* FifthTwoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthTwoVC.swift; sourceTree = "<group>"; };
 		80BA1B1E25D41B34002EDEE8 /* Segue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Segue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80BA1B2125D41B35002EDEE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80BA1B2325D41B35002EDEE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +97,10 @@
 				8013FDB825D88748000539EA /* ThirdVC.swift */,
 				8013FDBB25D8875F000539EA /* ThirdTwoVC.swift */,
 				8013FDBE25D954DF000539EA /* ThirdThreeVC.swift */,
+				806B6A1225DC3D7400FCE2AC /* FourthVC.swift */,
+				806B6A1525DC3D9000FCE2AC /* FourthTwoVC.swift */,
+				806B6A1825DC6BEA00FCE2AC /* FifthVC.swift */,
+				806B6A1B25DC6C2000FCE2AC /* FifthTwoVC.swift */,
 			);
 			path = Segue;
 			sourceTree = "<group>";
@@ -163,6 +175,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				806B6A1625DC3D9000FCE2AC /* FourthTwoVC.swift in Sources */,
+				806B6A1325DC3D7400FCE2AC /* FourthVC.swift in Sources */,
+				806B6A1925DC6BEA00FCE2AC /* FifthVC.swift in Sources */,
+				806B6A1C25DC6C2000FCE2AC /* FifthTwoVC.swift in Sources */,
 				80BA1B2225D41B35002EDEE8 /* AppDelegate.swift in Sources */,
 				8013FDBC25D8875F000539EA /* ThirdTwoVC.swift in Sources */,
 				80BA1B3725D41B63002EDEE8 /* SecondVC.swift in Sources */,
